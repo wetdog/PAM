@@ -96,7 +96,7 @@ class ExampleDatasetFolder(AudioDataset):
         super().__init__(src,repro)
     
     def get_files(self):
-        return glob.glob(os.path.join(self.src,"**.wav"))
+        return glob.glob(os.path.join(self.src,"**/*.wav"), recursive=True)
     
 class ExampleDatasetFiles(AudioDataset):
     def __init__(self, src, repro = False):
